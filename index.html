@@ -1,14 +1,66 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
+
+<head>
+    <meta charset="UTF-8">
     <title>Directorio de Contactos</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
     <h1>Examen Recuperatorio</h1>
-    <!-- Escribe aquí todo tu HTML -->
+
+    <div class="contenedor">
+
+        <h2>Directorio de Contactos</h2>
+
+        <div class="formulario">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre"
+            >
+
+            <input
+                type="text"
+                id="telefono"
+                placeholder="Telefono"
+            >
+
+            <button id="btnAgregar">
+                Agregar
+            </button>
+
+        </div>
+        <div class="buscador">
+
+            <input
+                type="text"
+                id="buscar"
+                placeholder="Buscar contacto por nombre..."
+            >
+
+        </div>
+        <div id="listaContactos">
+
+            <p id="mensajeVacio">
+                Todavia no agregaste contactos.
+            </p>
+
+        </div>
+        <div class="contador">
+
+            <strong>Contactos: </strong>
+            <span id="contador">0</span>
+
+        </div>
+
+    </div>
 
     <script src="script.js"></script>
-  </body>
+
+</body>
+
 </html>
