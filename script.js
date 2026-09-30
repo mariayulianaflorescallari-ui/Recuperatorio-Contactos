@@ -6,6 +6,7 @@ let btnAgregar = document.getElementById("btnAgregar");
 let listaContactos = document.getElementById("listaContactos");
 let mensajeVacio = document.getElementById("mensajeVacio");
 let contador = document.getElementById("contador");
+let buscar = document.getElementById("buscar");
 
 btnAgregar.addEventListener("click", function() {
 
@@ -30,20 +31,22 @@ btnAgregar.addEventListener("click", function() {
 
 });
 
-function mostrarContactos() {
+function mostrarContactos(lista = contactos) {
 
     listaContactos.innerHTML = "";
 
     contador.textContent = contactos.length;
 
-    if (contactos.length === 0) {
+    if (lista.length === 0) {
         mensajeVacio.style.display = "block";
         return;
     }
 
     mensajeVacio.style.display = "none";
 
-    contactos.forEach(function(contacto, indice) {
+    lista.forEach(function(contacto) {
+
+        let indice = contactos.indexOf(contacto);
 
         let item = document.createElement("div");
 
@@ -75,3 +78,17 @@ function mostrarContactos() {
     });
 
 }
+
+buscar.addEventListener("input", function() {
+
+    let texto = buscar.value.toLowerCase();
+
+    let resultados = contactos.filter(function(contacto) {
+
+        return contacto.nombre.toLowerCase().includes(texto);
+
+    });
+
+    mostrarContactos(resultados);
+
+});
