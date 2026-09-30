@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     background-color: #f4f5f3;
@@ -92,21 +93,27 @@ h1 {
     font-size: 16px;
 }
 
+/* ==========================================
+   MENSAJE CUANDO NO HAY CONTACTOS
+   ========================================== */
+
+#mensajeVacio {
+    text-align: center;
+    color: #777777;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
 .contador {
     border-top: 1px solid #dddddd;
     padding-top: 18px;
     margin-top: 0;
 
     font-size: 16px;
-    color: #777777;
+    color: #222222;
 }
 
 .contador strong {
-    color: #777777;
     font-weight: bold;
-}
-
-#contador {
-    color: #777777;
-    font-weight: normal;
 }
