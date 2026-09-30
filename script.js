@@ -5,7 +5,7 @@ let telefono = document.getElementById("telefono");
 let btnAgregar = document.getElementById("btnAgregar");
 let listaContactos = document.getElementById("listaContactos");
 let mensajeVacio = document.getElementById("mensajeVacio");
-
+let contador = document.getElementById("contador");
 
 btnAgregar.addEventListener("click", function() {
 
@@ -33,6 +33,8 @@ btnAgregar.addEventListener("click", function() {
 function mostrarContactos() {
 
     listaContactos.innerHTML = "";
+
+    contador.textContent = contactos.length;
 
     if (contactos.length === 0) {
         mensajeVacio.style.display = "block";
