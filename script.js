@@ -6,6 +6,7 @@ let btnAgregar = document.getElementById("btnAgregar");
 let listaContactos = document.getElementById("listaContactos");
 let mensajeVacio = document.getElementById("mensajeVacio");
 
+
 btnAgregar.addEventListener("click", function() {
 
     let nombreContacto = nombre.value.trim();
@@ -33,9 +34,14 @@ function mostrarContactos() {
 
     listaContactos.innerHTML = "";
 
+    if (contactos.length === 0) {
+        mensajeVacio.style.display = "block";
+        return;
+    }
+
     mensajeVacio.style.display = "none";
 
-    contactos.forEach(function(contacto) {
+    contactos.forEach(function(contacto, indice) {
 
         let item = document.createElement("div");
 
@@ -51,6 +57,16 @@ function mostrarContactos() {
                 Eliminar
             </button>
         `;
+
+        let btnEliminar = item.querySelector(".btnEliminar");
+
+        btnEliminar.addEventListener("click", function() {
+
+            contactos.splice(indice, 1);
+
+            mostrarContactos();
+
+        });
 
         listaContactos.appendChild(item);
 
